@@ -7,6 +7,45 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {}
+function capitalize(str) {
+   let result = str[0].toUpperCase();
+
+   for(let i =1; i<str.length; i++){
+       if(str[i-1]=== ' '){
+           result+=str[i].toUpperCase();
+       }else{
+           result+=str[i];
+       }
+   }
+   return result;
+}
+
+//First Grider Solution/////
+// function capitalize(str) {
+//     const words = [];
+
+//     for (let word of str.split(' ')){
+//         //everything from index 1 and beyond
+//         words.push(word[0].toUpperCase()+ word.slice(1));
+//     }
+//     return words.join(' ');
+// }
+
+//MY answer brute force
+// function capitalize(str) {
+//     let newStr= ""
+//     for(var i =0; i<str.length; i++){
+//         if(i===0){
+//            newStr+=str[0].toUpperCase();
+//         }
+//         else if(str[i-1]===' '){
+//             newStr+=str[i].toUpperCase();
+//         }
+//         else{
+//             newStr+= str[i];
+//         }
+//     }
+//     return newStr;
+// }
 
 module.exports = capitalize;
